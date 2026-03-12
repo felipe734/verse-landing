@@ -15,7 +15,7 @@ const trustItems = [
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-warm-gradient bg-grain pb-24 pt-28 md:pb-28 md:pt-36">
+    <section className="relative overflow-hidden bg-warm-gradient bg-grain pt-28 md:pt-36">
       <div className="section-container relative z-10">
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <motion.div
@@ -105,27 +105,25 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="absolute inset-x-0 bottom-0 z-10">
-        <div className="section-container">
-          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 rounded-t-[28px] border border-b-0 border-neutral-200/70 bg-white/80 py-5 shadow-[0_-18px_45px_rgba(15,23,42,0.08)] backdrop-blur-md">
-            {trustItems.map((item) => (
-              <div key={item.text} className="flex items-center gap-2 text-sm font-medium text-neutral-500">
-                <Check className="h-4 w-4 text-verse-500" />
-                {item.isCounter ? (
-                  <span>
-                    <AnimatedCounter
-                      target={item.value!}
-                      prefix={item.prefix}
-                      className="font-semibold text-neutral-700"
-                    />
-                    {item.text}
-                  </span>
-                ) : (
-                  <span>{item.text}</span>
-                )}
-              </div>
-            ))}
-          </div>
+      <div className="relative z-10 mt-16 border-t border-neutral-200/60 bg-white/50 backdrop-blur-sm">
+        <div className="section-container flex flex-wrap items-center justify-center gap-x-10 gap-y-3 py-5">
+          {trustItems.map((item) => (
+            <div key={item.text} className="flex items-center gap-2 text-sm font-medium text-neutral-500">
+              <Check className="h-4 w-4 text-verse-500" />
+              {item.isCounter ? (
+                <span>
+                  <AnimatedCounter
+                    target={item.value!}
+                    prefix={item.prefix}
+                    className="font-semibold text-neutral-700"
+                  />
+                  {item.text}
+                </span>
+              ) : (
+                <span>{item.text}</span>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </section>
