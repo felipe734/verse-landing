@@ -15,8 +15,8 @@ const trustItems = [
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-warm-gradient bg-grain pt-28 md:pt-36">
-      <div className="section-container relative z-10">
+    <section className="relative flex min-h-svh flex-col overflow-hidden bg-warm-gradient bg-grain pt-28 md:pt-36">
+      <div className="section-container relative z-10 flex flex-1 items-center">
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <motion.div
             variants={stagger}
@@ -57,7 +57,7 @@ export default function Hero() {
 
             <motion.p
               variants={fadeUp}
-              className="mt-6 max-w-xl text-center text-lg leading-relaxed text-neutral-500 md:text-xl lg:text-left"
+              className="mt-6 max-w-xl text-center text-base leading-relaxed text-neutral-500 md:text-xl lg:text-left"
             >
               Nos encargamos de huéspedes, limpieza, mantenimiento y reportes. Tú solo ves números claros cada mes.
             </motion.p>

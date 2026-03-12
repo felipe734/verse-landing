@@ -9,7 +9,7 @@ const profiles = [
     tag: "Aspirante",
     title: "Estoy Investigando",
     description:
-      "Tienes o vas a tener un apartamento y estás investigando si vale la pena destinarlo a rentas cortas. Te preocupa equivocarte con la inversión, la regulación o el operador.",
+      "Tienes o vas a tener una propiedad y quieres entender si renta corta sí vale la pena antes de tomar una decisión.",
     cta: "Quiero investigar bien",
     icon: Search,
   },
@@ -17,15 +17,15 @@ const profiles = [
     tag: "Novato",
     title: "Quiero Delegar",
     description:
-      "Ya tienes un anuncio en Airbnb/Booking y lo operas tú. Respondes mensajes, coordinas limpiezas y fijas precios 'a ojo'. Quieres mejorar resultados sin que se vuelva un segundo trabajo.",
+      "Ya operas tu propiedad por tu cuenta, pero quieres delegar la operación sin perder control ni visibilidad.",
     cta: "Quiero delegar",
     icon: UserRoundCog,
   },
   {
     tag: "Desencantado",
-    title: "Propietario desencantado",
+    title: "Quiero transparencia",
     description:
-      "Ya tienes operador, pero no confías del todo en sus reportes, en sus decisiones ni en sus números. Sospechas que podrías estar ganando más o, mínimo, entendiendo mejor tus resultados.",
+      "Ya tienes operador, pero quieres reportes más claros, mejor control y más confianza en tus números.",
     cta: "Quiero transparencia",
     icon: ShieldAlert,
   },
@@ -65,15 +65,12 @@ export default function Profiles() {
                 variants={fadeUp}
                 className="card group flex flex-col p-6 hover:-translate-y-1 hover:shadow-md"
               >
-                <span className="w-fit rounded-md bg-neutral-100 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-neutral-500">
-                  {p.tag}
-                </span>
-
-                <div className="mt-4 flex h-11 w-11 items-center justify-center rounded-xl bg-verse-50 text-verse-500">
-                  <Icon className="h-5 w-5" />
+                <div className="flex items-center justify-between gap-4">
+                  <h3 className="heading-md pr-2">{p.title}</h3>
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-verse-50 text-verse-500">
+                    <Icon className="h-5 w-5" />
+                  </div>
                 </div>
-
-                <h3 className="heading-md mt-5">{p.title}</h3>
 
                 <p className="mt-3 flex-1 text-[0.94rem] leading-relaxed text-neutral-500">
                   {p.description}

@@ -28,7 +28,7 @@ export default function Navbar() {
           "fixed left-0 right-0 top-0 z-50 transition-all duration-300",
           scrolled
             ? "border-b border-neutral-200/50 bg-white/70 shadow-xs backdrop-blur-xl"
-            : "bg-transparent"
+            : "border-b border-white/30 bg-white/45 shadow-[0_8px_30px_rgba(15,23,42,0.06)] backdrop-blur-md"
         )}
       >
         <nav className="section-container flex h-16 items-center justify-between">
@@ -44,7 +44,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-neutral-500 transition-colors duration-150 hover:text-neutral-900"
+                className="text-sm font-medium text-neutral-700 transition-colors duration-150 hover:text-neutral-900"
               >
                 {link.label}
               </a>

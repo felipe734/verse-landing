@@ -9,6 +9,7 @@ import AnimatedCounter from "./AnimatedCounter";
 const cases = [
   {
     image: "/images/12.png",
+    imageClassName: "h-64",
     area: "Usaquén, Bogotá",
     tag: "Operación 360",
     title: "De operar solo a recuperar su tiempo",
@@ -24,6 +25,7 @@ const cases = [
   },
   {
     image: "/images/OpenC60_02.png",
+    imageClassName: "h-64",
     area: "Chapinero, Bogotá",
     tag: "Cambio de Operador",
     title: "De reportes confusos a claridad",

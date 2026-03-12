@@ -11,9 +11,7 @@ export default function Footer() {
               <span className="h-2 w-2 rounded-full bg-verse-500" />
             </div>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-neutral-600">
-              Convertimos tu Airbnb
-              <br />
-              en un activo rentable
+              Convertimos tu Airbnb en un activo rentable, con cumplimiento legal y operativo.
             </p>
           </div>
 
