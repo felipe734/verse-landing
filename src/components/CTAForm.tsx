@@ -102,13 +102,13 @@ export default function CTAForm() {
         <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} className="max-w-lg">
           <motion.h2 variants={fadeUp} className="heading-lg">Chequeo Verse Host</motion.h2>
           <motion.p variants={fadeUp} className="text-body mt-4">Cuéntanos de tu propiedad y te damos un diagnóstico claro con siguiente paso sugerido. Sin compromiso.</motion.p>
-          <motion.div variants={fadeUp} className="mt-10 space-y-8">
+          <motion.div variants={fadeUp} className="mt-10 hidden space-y-4 lg:block lg:space-y-8">
             {vp.map((item) => { const I = item.icon; return (
-              <div key={item.t} className="flex items-start gap-4">
+              <div key={item.t} className="flex items-center gap-4">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-verse-50 text-verse-500"><I className="h-5 w-5" /></div>
                 <div>
                   <h3 className="text-[0.95rem] font-bold text-neutral-900">{item.t}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-neutral-500">{item.d}</p>
+                  <p className="mt-1 hidden text-sm leading-relaxed text-neutral-500 lg:block">{item.d}</p>
                 </div>
               </div>
             ); })}

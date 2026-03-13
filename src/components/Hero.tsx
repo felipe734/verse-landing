@@ -71,7 +71,7 @@ export default function Hero() {
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
-                href="https://wa.link/v2t51z"
+                href="https://wa.link/uu7ut2"
                 target="_blank"
                 rel="noreferrer"
                 className="btn-ghost"

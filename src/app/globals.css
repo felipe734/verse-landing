@@ -88,7 +88,7 @@ a {
   }
 
   .input-field {
-    @apply w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-900 transition-all duration-150 placeholder:text-neutral-400 focus:border-verse-400 focus:outline-none focus:ring-2 focus:ring-verse-100;
+    @apply w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-base text-neutral-900 transition-all duration-150 placeholder:text-neutral-400 focus:border-verse-400 focus:outline-none focus:ring-2 focus:ring-verse-100;
   }
 }
 
