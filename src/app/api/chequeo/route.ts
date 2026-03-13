@@ -58,6 +58,7 @@ export async function POST(request: Request) {
           source: "api",
         },
       });
+      await posthog.flush();
     } catch (error) {
       console.error("Chequeo PostHog error", error);
     }
