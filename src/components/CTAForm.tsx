@@ -3,6 +3,7 @@
 import { CheckCircle2, Clock3, TrendingUp, ArrowRight } from "lucide-react";
 import { FormEvent, useState } from "react";
 import { motion } from "framer-motion";
+import posthog from "posthog-js";
 import { fadeUp, stagger } from "@/lib/animations";
 import { cn } from "@/lib/utils";
 import {
@@ -84,10 +85,17 @@ export default function CTAForm() {
         return;
       }
 
+      posthog.capture("chequeo_form_submitted", {
+        property_type: validation.data.propertyType,
+        has_location: Boolean(validation.data.location),
+        has_details: Boolean(validation.data.details),
+      });
       setDone(true);
       setF(createEmptyChequeoFormData());
       setFieldErrors({});
-    } catch {
+    } catch (err) {
+      posthog.captureException(err);
+      posthog.capture("chequeo_form_error", { error_type: "network" });
       setSubmitError(
         "No pudimos enviar tu solicitud. Revisa tu conexion e intentalo de nuevo.",
       );

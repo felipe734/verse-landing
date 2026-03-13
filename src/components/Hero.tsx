@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { motion } from "framer-motion";
+import posthog from "posthog-js";
 import { fadeUp, stagger } from "@/lib/animations";
 import AnimatedCounter from "./AnimatedCounter";
 
@@ -66,7 +67,7 @@ export default function Hero() {
               variants={fadeUp}
               className="mt-10 flex flex-col gap-3.5 sm:flex-row sm:items-center"
             >
-              <a href="#chequeo" className="btn-primary">
+              <a href="#chequeo" className="btn-primary" onClick={() => posthog.capture("hero_cta_clicked", { location: "hero" })}>
                 Solicitar Chequeo
                 <ArrowRight className="h-4 w-4" />
               </a>
@@ -75,6 +76,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noreferrer"
                 className="btn-ghost"
+                onClick={() => posthog.capture("whatsapp_clicked", { location: "hero" })}
               >
                 Hablar con asesor
                 <ArrowUpRight className="h-4 w-4" />

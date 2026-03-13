@@ -2,6 +2,7 @@
 
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import posthog from "posthog-js";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -55,6 +56,7 @@ export default function Navbar() {
             <a
               href="#chequeo"
               className="hidden rounded-full bg-verse-500 px-5 py-2.5 text-sm font-semibold text-white shadow-glow transition-all duration-200 hover:-translate-y-0.5 hover:bg-verse-600 hover:shadow-glow-lg md:inline-flex"
+              onClick={() => posthog.capture("navbar_cta_clicked", { location: "desktop" })}
             >
               Quiero revisar mi caso
             </a>
@@ -118,7 +120,7 @@ export default function Navbar() {
         <a
           href="#chequeo"
           className="btn-primary mt-8"
-          onClick={() => setOpen(false)}
+          onClick={() => { setOpen(false); posthog.capture("navbar_cta_clicked", { location: "mobile_menu" }); }}
         >
           Quiero revisar mi caso
         </a>

@@ -3,6 +3,7 @@
 import * as Accordion from "@radix-ui/react-accordion";
 import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
+import posthog from "posthog-js";
 import { fadeUp, stagger } from "@/lib/animations";
 
 const items = [
@@ -64,6 +65,9 @@ export default function FAQ() {
             type="single"
             collapsible
             className="card mx-auto mt-12 max-w-3xl divide-y divide-neutral-100 overflow-hidden px-0"
+            onValueChange={(value) => {
+              if (value) posthog.capture("faq_question_expanded", { question: value });
+            }}
           >
             {items.map((item) => (
               <Accordion.Item key={item.question} value={item.question}>

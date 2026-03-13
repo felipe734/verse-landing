@@ -6,6 +6,7 @@ import {
   validateChequeoFormData,
 } from "@/lib/validation";
 import { createChequeoAirtableRecord } from "@/lib/server/airtable";
+import { getPostHogClient } from "@/lib/posthog-server";
 
 export const runtime = "nodejs";
 
@@ -44,6 +45,18 @@ export async function POST(request: Request) {
     if (!result.ok) {
       return jsonResponse({ message: result.message }, 502);
     }
+
+    const posthog = getPostHogClient();
+    posthog.capture({
+      distinctId: validation.data.whatsapp,
+      event: "chequeo_submitted",
+      properties: {
+        property_type: validation.data.propertyType,
+        has_location: Boolean(validation.data.location),
+        has_details: Boolean(validation.data.details),
+        source: "api",
+      },
+    });
 
     return jsonResponse(
       { message: "Solicitud enviada correctamente." },
