@@ -27,7 +27,7 @@ const cases = [
     image: "/images/OpenC60_02.png",
     imageClassName: "h-64",
     area: "Chapinero, Bogotá",
-    tag: "Cambio de Operador",
+    tag: "Operación 360",
     title: "De reportes confusos a claridad",
     description:
       "Apartamento 2 habitaciones. Cambió de operador anterior con reportes poco claros y ocupación del 62%.",
@@ -43,7 +43,7 @@ const cases = [
     image: "/images/2.png",
     imageClassName: "h-64",
     area: "La Castellana, Bogotá",
-    tag: "Operación 360",
+    tag: "Cambio de Operador",
     title: "De propiedad lista a operación activa",
     description:
       "Apartaestudio listo para salir al mercado. Activamos la operación, ajustamos la estrategia comercial y logró su primera reserva a los 3 días de publicar.",
@@ -59,7 +59,7 @@ const cases = [
 
 export default function Results() {
   return (
-    <section id="resultados" className="section-padding bg-[#faf9f7]">
+    <section id="resultados" className="section-padding bg-white">
       <div className="section-container">
         <motion.div
           variants={stagger}

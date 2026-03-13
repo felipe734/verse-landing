@@ -32,7 +32,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="section-padding bg-white">
+    <section id="proceso" className="section-padding bg-[#faf9f7]">
       <div className="section-container">
         <motion.div
           variants={stagger}

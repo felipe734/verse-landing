@@ -57,7 +57,7 @@ export default function Hero() {
 
             <motion.p
               variants={fadeUp}
-              className="mt-6 max-w-xl text-center text-base leading-relaxed text-neutral-500 md:text-xl lg:text-left"
+              className="mt-6 max-w-xl text-center text-sm leading-relaxed text-neutral-500 md:text-base lg:text-left"
             >
               Nos encargamos de huéspedes, limpieza, mantenimiento y reportes. Tú solo ves números claros cada mes.
             </motion.p>

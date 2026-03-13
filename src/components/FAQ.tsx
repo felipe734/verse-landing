@@ -40,7 +40,7 @@ const items = [
 
 export default function FAQ() {
   return (
-    <section id="faq" className="section-padding bg-[#faf9f7]">
+    <section id="faq" className="section-padding bg-white">
       <div className="section-container">
         <motion.div
           variants={stagger}

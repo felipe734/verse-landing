@@ -15,10 +15,10 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Profiles />
+      <Technology />
       <Process />
       <Results />
       <CTAForm />
-      <Technology />
       <FAQ />
       <Footer />
       <FloatingWhatsApp />

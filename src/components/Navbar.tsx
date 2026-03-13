@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { href: "#perfiles", label: "Para quién es" },
-  { href: "#recursos", label: "Recursos" },
-  { href: "#resultados", label: "Casos reales" },
+  { href: "#perfiles", label: "¿Es para mí?" },
+  { href: "#proceso", label: "Cómo funciona" },
+  { href: "#resultados", label: "Resultados" },
 ];
 
 export default function Navbar() {

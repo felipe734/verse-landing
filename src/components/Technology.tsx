@@ -15,6 +15,21 @@ const tableRows = [
   ["VH-2033", "TRA y SIRE cargados", "PDF"],
 ];
 
+const resourceItems = [
+  {
+    title: "Reservas centralizadas",
+    description: "Calendario, estado y operación en un solo flujo.",
+  },
+  {
+    title: "Cumplimiento al día",
+    description: "Soportes, pólizas y procesos legales siempre organizados.",
+  },
+  {
+    title: "Reportes accionables",
+    description: "Ingresos, ocupación y desempeño claros para decidir mejor.",
+  },
+];
+
 export default function Technology() {
   return (
     <section id="recursos" className="relative overflow-hidden bg-white section-padding">
@@ -25,20 +40,33 @@ export default function Technology() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
+            className="max-w-xl"
           >
             <motion.div variants={fadeUp} className="inline-flex items-center gap-2 rounded-full border border-verse-200 bg-verse-50 px-3.5 py-1.5 text-sm font-semibold text-verse-600">
               Tecnología propia
             </motion.div>
 
-            <motion.h2 variants={fadeUp} className="mt-6 text-3xl font-bold tracking-[-0.035em] text-neutral-900 md:text-[2.75rem] md:leading-[1.1]">
-              Tu propiedad opera con
-              <br />
-              un sistema profesional.
+            <motion.h2 variants={fadeUp} className="heading-lg mt-6">
+              Cumplimiento Legal y Operativo Automatizado
             </motion.h2>
 
-            <motion.p variants={fadeUp} className="mt-5 text-base leading-relaxed text-neutral-500">
-              Todo queda organizado en un solo sistema: reservas, cumplimiento y reportes claros.
-            </motion.p>
+            <motion.ul variants={fadeUp} className="mt-6 space-y-3">
+              {resourceItems.map((item) => (
+                <li key={item.title} className="rounded-2xl border border-neutral-200 bg-neutral-50/70 px-4 py-3">
+                  <div className="flex items-start gap-3">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-verse-500" />
+                    <div>
+                      <p className="text-sm font-semibold text-neutral-900">
+                        {item.title}
+                      </p>
+                      <p className="mt-1 text-sm text-neutral-500">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </motion.ul>
           </motion.div>
 
           <motion.div
@@ -46,6 +74,7 @@ export default function Technology() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, delay: 0.15 }}
+            className="w-full max-w-2xl lg:ml-auto"
           >
             <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-xl shadow-neutral-200/70">
               <div className="flex h-9 items-center gap-1.5 border-b border-neutral-200 px-4">
