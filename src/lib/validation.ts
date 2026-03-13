@@ -2,8 +2,6 @@ export const propertyTypeOptions = [
   "Apartamento",
   "Apartaestudio",
   "Casa",
-  "Loft",
-  "Habitación",
   "Otro",
 ] as const;
 
