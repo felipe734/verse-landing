@@ -8,7 +8,7 @@ const steps = [
     number: "01",
     title: "Diagnóstico de necesidad",
     description:
-      "Ubicación, tipo de propiedad, reglas de PH, potencial real en STR. Si creemos que no hace sentido, te lo decimos también.",
+      "Ubicación, tipo de propiedad, reglas de PH, potencial real en rentas cortas. Si creemos que no hace sentido, te lo decimos también.",
   },
   {
     number: "02",

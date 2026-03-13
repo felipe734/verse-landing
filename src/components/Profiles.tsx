@@ -23,10 +23,10 @@ const profiles = [
   },
   {
     tag: "Desencantado",
-    title: "Operador",
+    title: "Cambiar Operador",
     description:
       "Ya tienes operador, pero quieres reportes más claros, mejor control y más confianza en tus números.",
-    cta: "Quiero transparencia",
+    cta: "Quiero cambiar",
     icon: ShieldAlert,
   },
 ];

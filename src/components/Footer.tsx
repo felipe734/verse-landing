@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-neutral-200 bg-[#f5f1eb]">
       <div className="section-container py-16">
-        <div className="grid gap-10 md:grid-cols-[1.3fr_0.9fr_0.9fr]">
+        <div className="grid items-start gap-10 md:grid-cols-[1.3fr_0.9fr_0.9fr]">
           <div>
             <div className="flex items-center gap-2">
               <span className="text-lg font-semibold tracking-[-0.03em] text-neutral-900">
@@ -17,14 +17,17 @@ export default function Footer() {
 
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-widest text-neutral-500">
-              Recursos
+              Navegación
             </h3>
             <div className="mt-3 flex flex-col gap-2.5">
-              <a href="#" className="text-sm text-neutral-600 transition-colors hover:text-neutral-900">
-                Blog y Guías
+              <a href="#perfiles" className="text-sm text-neutral-600 transition-colors hover:text-neutral-900">
+                ¿Es para mí?
+              </a>
+              <a href="#proceso" className="text-sm text-neutral-600 transition-colors hover:text-neutral-900">
+                Cómo funciona
               </a>
               <a href="#resultados" className="text-sm text-neutral-600 transition-colors hover:text-neutral-900">
-                Casos Reales
+                Resultados
               </a>
             </div>
           </div>
