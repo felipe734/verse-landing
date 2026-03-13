@@ -98,9 +98,6 @@ export default function Hero() {
                 priority
               />
             </div>
-            <div className="absolute bottom-4 right-5 rounded-full bg-white/90 px-4 py-2 text-xs font-bold tracking-wide text-neutral-900 shadow-md backdrop-blur-sm">
-              VERSE <span className="text-verse-500">HOST</span>
-            </div>
           </motion.div>
         </div>
       </div>

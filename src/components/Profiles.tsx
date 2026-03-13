@@ -23,7 +23,7 @@ const profiles = [
   },
   {
     tag: "Desencantado",
-    title: "Quiero transparencia",
+    title: "Operador",
     description:
       "Ya tienes operador, pero quieres reportes más claros, mejor control y más confianza en tus números.",
     cta: "Quiero transparencia",
