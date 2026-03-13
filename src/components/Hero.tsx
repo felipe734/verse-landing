@@ -76,7 +76,6 @@ export default function Hero() {
                 target="_blank"
                 rel="noreferrer"
                 className="btn-ghost"
-                onClick={() => posthog.capture("whatsapp_clicked", { location: "hero" })}
               >
                 Hablar con asesor
                 <ArrowUpRight className="h-4 w-4" />
