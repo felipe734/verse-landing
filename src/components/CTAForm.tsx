@@ -8,17 +8,13 @@ import { cn } from "@/lib/utils";
 import {
   type ChequeoFieldErrors,
   type ChequeoFormData,
+  type ChequeoSubmitResponse,
+  createEmptyChequeoFormData,
   propertyTypeOptions,
   validateChequeoFormData,
 } from "@/lib/validation";
 
-const init: ChequeoFormData = {
-  name: "",
-  whatsapp: "",
-  propertyType: "",
-  location: "",
-  details: "",
-};
+const init = createEmptyChequeoFormData();
 
 const vp = [
   { icon: CheckCircle2, t: "Diagnóstico claro", d: "Revisamos tu caso y te decimos si tiene sentido, qué problemas vemos y qué oportunidades hay." },
@@ -48,7 +44,7 @@ export default function CTAForm() {
 
   const resetForm = () => {
     setDone(false);
-    setF(init);
+    setF(createEmptyChequeoFormData());
     setFieldErrors({});
     setSubmitError("");
   };
@@ -77,10 +73,7 @@ export default function CTAForm() {
         body: JSON.stringify(validation.data),
       });
 
-      const payload = (await response.json()) as {
-        message?: string;
-        fieldErrors?: ChequeoFieldErrors;
-      };
+      const payload = (await response.json()) as ChequeoSubmitResponse;
 
       if (!response.ok) {
         setFieldErrors(payload.fieldErrors ?? {});
@@ -92,7 +85,7 @@ export default function CTAForm() {
       }
 
       setDone(true);
-      setF(init);
+      setF(createEmptyChequeoFormData());
       setFieldErrors({});
     } catch {
       setSubmitError(

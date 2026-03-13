@@ -17,11 +17,46 @@ export type ChequeoFormData = {
   details: string;
 };
 
+export type ChequeoSubmitResponse = {
+  message?: string;
+  fieldErrors?: ChequeoFieldErrors;
+};
+
 export type ChequeoFieldErrors = Partial<
   Record<"name" | "whatsapp" | "location" | "propertyType", string>
 >;
 
 const namePattern = /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ' -]+$/;
+
+function toStringValue(value: unknown) {
+  return typeof value === "string" ? value : "";
+}
+
+export function createEmptyChequeoFormData(): ChequeoFormData {
+  return {
+    name: "",
+    whatsapp: "",
+    location: "",
+    propertyType: "",
+    details: "",
+  };
+}
+
+export function parseChequeoFormData(input: unknown): ChequeoFormData {
+  if (!input || typeof input !== "object") {
+    return createEmptyChequeoFormData();
+  }
+
+  const data = input as Partial<Record<keyof ChequeoFormData, unknown>>;
+
+  return {
+    name: toStringValue(data.name),
+    whatsapp: toStringValue(data.whatsapp),
+    location: toStringValue(data.location),
+    propertyType: toStringValue(data.propertyType),
+    details: toStringValue(data.details),
+  };
+}
 
 function collapseWhitespace(value: string) {
   return value.trim().replace(/\s+/g, " ");
