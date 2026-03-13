@@ -3,10 +3,27 @@ import { PostHog } from "posthog-node";
 
 let posthogClient: PostHog | null = null;
 
-export function getPostHogClient(): PostHog {
+function getPostHogApiKey() {
+  return (
+    process.env.POSTHOG_PROJECT_TOKEN ??
+    process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN
+  );
+}
+
+function getPostHogHost() {
+  return process.env.POSTHOG_HOST ?? process.env.NEXT_PUBLIC_POSTHOG_HOST ?? "https://us.i.posthog.com";
+}
+
+export function getPostHogClient(): PostHog | null {
   if (!posthogClient) {
-    posthogClient = new PostHog(process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN!, {
-      host: "https://us.i.posthog.com",
+    const apiKey = getPostHogApiKey();
+
+    if (!apiKey) {
+      return null;
+    }
+
+    posthogClient = new PostHog(apiKey, {
+      host: getPostHogHost(),
       flushAt: 1,
       flushInterval: 0,
     });

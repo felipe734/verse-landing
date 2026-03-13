@@ -48,17 +48,20 @@ export async function POST(request: Request) {
 
     try {
       const posthog = getPostHogClient();
-      posthog.capture({
-        distinctId: validation.data.whatsapp,
-        event: "chequeo_submitted",
-        properties: {
-          property_type: validation.data.propertyType,
-          has_location: Boolean(validation.data.location),
-          has_details: Boolean(validation.data.details),
-          source: "api",
-        },
-      });
-      await posthog.flush();
+
+      if (posthog) {
+        posthog.capture({
+          distinctId: validation.data.whatsapp,
+          event: "chequeo_submitted",
+          properties: {
+            property_type: validation.data.propertyType,
+            has_location: Boolean(validation.data.location),
+            has_details: Boolean(validation.data.details),
+            source: "api",
+          },
+        });
+        await posthog.flush();
+      }
     } catch (error) {
       console.error("Chequeo PostHog error", error);
     }
